@@ -14,8 +14,7 @@ Keep in mind, often debugging is stressful for a couple reasons:
 * Debugging code bases that are not yours takes time. Take your time to work through each of the steps.
 
 
-In addition to making the changes to the code base to correct the code, update this README.md file to explain your solutions.
-Meaning, in your own words, explain the problem and why your solution fixes the problem.
+In addition to making the changes to the code base to correct the code, update this README.md file to explain your solutions. Meaning, in your own words, explain the problem and why your solution fixes the problem.
 
 
 ## TODO
@@ -31,6 +30,7 @@ var Apartments = mongoose.model("listings", ApartmentSchema, "listings");
 var Houses = mongoose.model("listings", HouseSchema, "listings");
 •The first parameter in a model is specific to the new collection that is being created, this will override the existing 'listings' collection. So, because these two models have the same string in the first parameter, there is a conflict and 'listings' model cannot be overwritten. 'listings' can only be used in the last parameter, indicating the existing collection.
 
+
 [X] - Index.html is not being properly served.
 app.get("/", function(req,res){
   res.sendFile(path.resolve("./server/public/views/index.html"));
@@ -39,10 +39,11 @@ app.get("/", function(req,res){
 
 
 [X] - Posting information does not seem to come up correctly on the req.body as intended.
-•body-parer was being used after 'listing.js'. In order for body-parser to work, it must load before the routes. With the way node works, everything flows down, so in most cases, what ever is being used first will load first.
+•body-parser was being used after 'listing.js'. In order for body-parser to work, it must load before the routes. With the way node works, everything flows down, so in most cases, what ever is being used first will load first.
+
 
 [X] - The information from the database is not being appended to the DOM.
-•The server is unable to find the index.html file because the public folder (server/public) is in the .gitignore file. Because of that, it was never saved to github and therefore, unable to be seen or accessed by anyone remotely.
+•The server is unable to find all the content in the public folder because (server/public) is in the .gitignore file. Because of that, it was never saved to github and therefore, unable to be seen or accessed by anyone remotely.
 
 
 ### Hard Mode
