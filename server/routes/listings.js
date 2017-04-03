@@ -17,8 +17,8 @@ var HouseSchema = mongoose.Schema({
 });
 
 var Listings = mongoose.model("listings", ListingSchema, "listings");
-var Apartments = mongoose.model("listings", ApartmentSchema, "listings");
-var Houses = mongoose.model("listings", HouseSchema, "listings");
+var Apartments = mongoose.model("apartments", ApartmentSchema, "listings");
+var Houses = mongoose.model("houses", HouseSchema, "listings");
 
 router.get("/", function(req,res){
   Listings.find({}, function(err, listings){

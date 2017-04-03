@@ -2,8 +2,8 @@
 
 ## Overview
 
-This Code Challenge is different from the rest. This time, you will need to debug an existing code base. You will need your 
-complete knowledge of the past 4 weeks to successfully navigate the problems that are in the code. 
+This Code Challenge is different from the rest. This time, you will need to debug an existing code base. You will need your
+complete knowledge of the past 4 weeks to successfully navigate the problems that are in the code.
 
 Keep in mind, often debugging is stressful for a couple reasons:
 
@@ -23,7 +23,10 @@ Meaning, in your own words, explain the problem and why your solution fixes the 
 ### Base Mode
 [ ] - Mongo does not seem to be connecting correctly.
 
-[ ] - The models have a conflict.
+[X] - The models have a conflict.
+var Apartments = mongoose.model("listings", ApartmentSchema, "listings");
+var Houses = mongoose.model("listings", HouseSchema, "listings");
+•The first parameter in a model is specific to the new collection that is being created, this will override the existing 'listings' collection. So, because these two models have the same string in the first parameter, there is a conflict and 'listings' model cannot be overwritten. 'listings' can only be used in the last parameter, indicating the existing collection.
 
 [ ] - Index.html is not being properly served.
 
@@ -33,7 +36,7 @@ Meaning, in your own words, explain the problem and why your solution fixes the 
 
 
 ### Hard Mode
-[ ] - All the information being appended on the DOM is not lining up together in their respective row. 
+[ ] - All the information being appended on the DOM is not lining up together in their respective row.
 
 
 ### Pro Mode
