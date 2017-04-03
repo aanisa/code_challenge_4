@@ -28,9 +28,15 @@ var Apartments = mongoose.model("listings", ApartmentSchema, "listings");
 var Houses = mongoose.model("listings", HouseSchema, "listings");
 •The first parameter in a model is specific to the new collection that is being created, this will override the existing 'listings' collection. So, because these two models have the same string in the first parameter, there is a conflict and 'listings' model cannot be overwritten. 'listings' can only be used in the last parameter, indicating the existing collection.
 
-[ ] - Index.html is not being properly served.
+[X] - Index.html is not being properly served.
+app.get("/", function(req,res){
+  res.sendFile(path.resolve("./server/public/views/index.html"));
+});
+•This bit of code was missing, which specified the location of index.html. Since index.html is contained inside the views folder (server/public/views/index.html), using app.use(express.static("./server/public")); alone won't locate the file. This would work only if index.html was located in the public folder (server/public/index.html). Express.static searched for index.html only within the specified path, it doesn't look in subfolder.
 
-[ ] - Posting information does not seem to come up correctly on the req.body as intended.
+
+[X] - Posting information does not seem to come up correctly on the req.body as intended.
+•body-parer was being used after 'listing.js'. In order for body-parser to work, it must load before the routes. With the way node works, everything flows down, so in most cases, what ever is being used first will load first.
 
 [ ] - The information from the database is not being appended to the DOM.
 
