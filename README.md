@@ -47,7 +47,8 @@ app.get("/", function(req,res){
 
 ### Hard Mode
 [ ] - All the information being appended on the DOM is not lining up together in their respective row.
-
+It is!
 
 ### Pro Mode
-[ ] - Not that you need to, but if you were to post this on Heroku, it would not work correctly.
+[X] - Not that you need to, but if you were to post this on Heroku, it would not work correctly.
+•In order to post this on Heroku, it would need to access the database remotely. Heroku is running the server, something needs to host the database. So, a remote database source like mLab would need to be connected to to the server. Instead of using localhost:27017, the specified mlab database url would need to be included. Once that is done, this app is ready to be deployed!
