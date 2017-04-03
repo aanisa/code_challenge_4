@@ -5,7 +5,8 @@ var bodyParser = require("body-parser");
 var db = require("./modules/db");
 var listings = require("./routes/listings");
 
-app.set("port", (process.env.port || 5000));
+app.set("port", (process.env.PORT || 5000));
+//PORT has to be capitalized, otherwise csan't host on heroku - note to self
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("./server/public"));

@@ -80,6 +80,7 @@ function getListings(){
     url: "/listings",
     success: function(response){
       console.log(response);
+
     }
   });
 }
