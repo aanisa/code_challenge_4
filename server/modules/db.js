@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 //replace username and password with your own info! Specific to your mLabs account.
-var mongoURI = "mongodb://localhost:2701/realestate";
+var mongoURI = "mongodb://localhost:27017/realestate";
 var MongoDB = mongoose.connect(mongoURI).connection;
 
 //If there is an error connecting to the database, let us know!

@@ -21,7 +21,10 @@ Meaning, in your own words, explain the problem and why your solution fixes the 
 ## TODO
 
 ### Base Mode
-[ ] - Mongo does not seem to be connecting correctly.
+[X] - Mongo does not seem to be connecting correctly.
+var mongoURI = "mongodb://localhost:2701/realestate";
+•Mongo uses port 27017. In order for mongo to work, the correct port number needs to be used. In this case, the last number, 7, was left out; therefore, mongo was unable to connect to the server.
+
 
 [X] - The models have a conflict.
 var Apartments = mongoose.model("listings", ApartmentSchema, "listings");
@@ -38,7 +41,8 @@ app.get("/", function(req,res){
 [X] - Posting information does not seem to come up correctly on the req.body as intended.
 •body-parer was being used after 'listing.js'. In order for body-parser to work, it must load before the routes. With the way node works, everything flows down, so in most cases, what ever is being used first will load first.
 
-[ ] - The information from the database is not being appended to the DOM.
+[X] - The information from the database is not being appended to the DOM.
+•The server is unable to find the index.html file because the public folder (server/public) is in the .gitignore file. Because of that, it was never saved to github and therefore, unable to be seen or accessed by anyone remotely.
 
 
 ### Hard Mode
